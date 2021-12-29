@@ -8378,12 +8378,7 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
-prism-theme-night-owl@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/prism-theme-night-owl/-/prism-theme-night-owl-1.4.0.tgz#af8a215ba75c081e22e74be41661dc40d7ad0c34"
-  integrity sha512-1N1GVbVorGd5t1Vw76yL/3rhqdiCpDrJg26Is+jGeMV7qiIMZL+bC7Mjx7HMMuVKZoi+2nWSbU5IutBYNy9tiQ==
-
-prismjs@^1.24.1:
+prismjs@^1.25.0:
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
   integrity sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==
@@ -8590,18 +8585,16 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bricks-ui@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/react-bricks-ui/-/react-bricks-ui-0.3.3.tgz#569c203c77f170064f6fe382460aa2943fe6b64d"
-  integrity sha512-vLD56QlTctPnfGoRJ+mA1cTQ4R+6/WIVogy/6VRmnvAinJtezAuIP8GO0kZvs7no+UTyBNa9aLoKbB0uySy6lQ==
+react-bricks-ui@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/react-bricks-ui/-/react-bricks-ui-0.3.5.tgz#ad29d20585c3946a41d953b12b80ffaa886e7f39"
+  integrity sha512-yRcq6Bd0L2jB5rSTXOc2+52G/Hr7HBKgqcMo0yERHG90VaJGDR4baIatxTjIRG/RczQhaFZDu00q6nicksG39A==
   dependencies:
     classnames "^2.3.1"
     dayjs "^1.10.7"
     email-validator "^2.0.4"
     jsonp "^0.2.1"
     pigeon-maps "^0.19.7"
-    prism-theme-night-owl "^1.4.0"
-    prismjs "^1.24.1"
     react-icons "^4.2.0"
     react-leaflet "^3.2.1"
     react-simple-code-editor "^0.11.0"
