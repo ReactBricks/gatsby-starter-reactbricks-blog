@@ -6,8 +6,23 @@ const pageTypes: types.IPageType[] = [
     pluralName: 'pages',
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
-    defaultLanguage: 'en',
     getDefaultContent: () => [],
+    excludedBlockTypes: [
+      'title',
+      'paragraph',
+      'video',
+      'image',
+      'quote',
+      'social-embed',
+      'code-block',
+      'twitter-light',
+    ],
+  },
+  {
+    name: 'blog',
+    pluralName: 'Blog',
+    getDefaultContent: () => [],
+    excludedBlockTypes: ['hero-unit'],
   },
 ]
 

@@ -5,8 +5,9 @@ require('dotenv').config({
 const bluebird = require('bluebird')
 const fetchPages = require('react-bricks/frontend').fetchPages
 const fetchPage = require('react-bricks/frontend').fetchPage
+const fetchTags = require('react-bricks/frontend').fetchTags
 
-exports.createPages = async ({ actions: { createPage } }) => {
+exports.createPages = async ({ actions: { createPage }, ...rest }) => {
   const appId = process.env.GATSBY_APP_ID
   const apiKey = process.env.API_KEY
 
@@ -16,10 +17,50 @@ exports.createPages = async ({ actions: { createPage } }) => {
     )
     createPage({
       path: `/`,
-      component: require.resolve('./src/templates/page.tsx'),
+      component: require.resolve('./src/templates/index.tsx'),
       context: { page: null, error: 'NOKEYS' },
     })
     return
+  }
+
+  const { items: tags } = await fetchTags(apiKey)
+  tags.sort()
+  const posts = await fetchPages(apiKey, { type: 'blog', pageSize: 100 })
+  const popularPosts = await fetchPages(apiKey, {
+    type: 'blog',
+    tag: 'popular',
+  })
+
+  if (apiKey) {
+    createPage({
+      path: `/`,
+      component: require.resolve('./src/templates/index.tsx'),
+      context: { posts, tags },
+    })
+    createPage({
+      path: `/blog-list-thumbnails`,
+      component: require.resolve('./src/templates/blog-list-thumbnails.tsx'),
+      context: { posts },
+    })
+
+    await bluebird.map(
+      tags,
+      async (tag) => {
+        const pagesByTag = await fetchPages(apiKey, {
+          tag: tag,
+          type: 'blog',
+          pageSize: 100,
+        })
+        createPage({
+          path: `/tag/${tag}`,
+          component: require.resolve('./src/templates/tag.tsx'),
+          context: { posts: pagesByTag, filterTag: tag, popularPosts, tags },
+        })
+      },
+      {
+        concurrency: 10,
+      }
+    )
   }
 
   const allPages = await fetchPages(apiKey)
@@ -43,16 +84,6 @@ exports.createPages = async ({ actions: { createPage } }) => {
     },
     { concurrency: 2 }
   )
-
-  // Home Page
-  const homePage = allPagesWithContent.find((page) => page.slug === 'home')
-  if (homePage) {
-    createPage({
-      path: `/`,
-      component: require.resolve('./src/templates/page.tsx'),
-      context: { page: homePage },
-    })
-  }
 
   // Other pages
   allPagesWithContent
