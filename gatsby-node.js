@@ -57,7 +57,7 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
   })
 
   createPage({
-    path: `/blog/thumbnails`,
+    path: `/thumbnails`,
     component: require.resolve('./src/templates/blog-list-thumbnails.tsx'),
     context: { posts },
   })
