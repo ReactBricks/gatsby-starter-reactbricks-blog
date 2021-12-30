@@ -14,11 +14,14 @@ const Header: React.FC = () => (
             />
           </a>
           <div className="sm:ml-8 flex space-x-5 text-center">
+            <Link to="/">
+              <a className="text-gray-500 hover:text-pink-700">Blog List</a>
+            </Link>
+            <Link to="/blog/thumbnails">
+              <a className="text-gray-500 hover:text-pink-700">Blog Thumbnails</a>
+            </Link>
             <Link to="/about-us">
               <a className="text-gray-500 hover:text-pink-700">About us</a>
-            </Link>
-            <Link to="/blog-list-thumbnails">
-              <a className="text-gray-500 hover:text-pink-700">Thumbnails</a>
             </Link>
           </div>
         </div>
