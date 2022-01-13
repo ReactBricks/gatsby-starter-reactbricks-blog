@@ -27,7 +27,7 @@ const tagPage: React.FC<PageProps> = ({
         Blog
       </h1>
       <div className="max-w-6xl mx-auto px-8 py-16 flex space-x-24">
-        <section className="flex-2 space-y-8">
+        <section className="flex-[2] space-y-8">
           <h2 className="text-pink-500 uppercase mb-8 tracking-widest font-bold">
             {filterTag}
           </h2>

@@ -24,7 +24,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({
         <div className="mr-2 group-hover:mr-4 transition-all duration-300">
           Read More
         </div>
-        <FiArrowRight />
+        &raquo;
       </div>
     </Link>
   )

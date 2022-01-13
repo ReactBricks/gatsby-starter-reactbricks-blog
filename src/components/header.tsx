@@ -15,13 +15,15 @@ const Header: React.FC = () => (
           </a>
           <div className="sm:ml-8 flex space-x-5 text-center">
             <Link to="/">
-              <a className="text-gray-500 hover:text-pink-700">Blog List</a>
+              <div className="text-gray-500 hover:text-pink-700">Blog List</div>
             </Link>
             <Link to="/thumbnails">
-              <a className="text-gray-500 hover:text-pink-700">Blog Thumbnails</a>
+              <div className="text-gray-500 hover:text-pink-700">
+                Blog Thumbnails
+              </div>
             </Link>
             <Link to="/about-us">
-              <a className="text-gray-500 hover:text-pink-700">About us</a>
+              <div className="text-gray-500 hover:text-pink-700">About us</div>
             </Link>
           </div>
         </div>
