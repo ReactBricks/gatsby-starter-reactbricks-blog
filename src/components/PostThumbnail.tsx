@@ -17,7 +17,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   image,
 }) => {
   return (
-    <Link to={`/posts/${href}`} className="w-1/2 mb-8 p-8 group cursor-pointer">
+    <Link to={`/blog/posts/${href}`} className="w-1/2 mb-8 p-8 group cursor-pointer">
       <div className="relative">
         <img
           src={image}

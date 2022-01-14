@@ -15,7 +15,7 @@ const PostListItem: React.FC<PostListItemProps> = ({
 }) => {
   return (
     <Link
-      to={`/posts/${href}`}
+      to={`/blog/posts/${href}`}
       className="flex-1 block group py-4 text-gray-900 hover:bg-gray-50 transition-colors duration-300 p-6 -m-6 rounded"
     >
       <h3 className="font-bold text-2xl">{title}</h3>

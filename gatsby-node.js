@@ -63,13 +63,13 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
   }
 
   createPage({
-    path: `/list`,
+    path: `/blog/list`,
     component: require.resolve('./src/templates/list.tsx'),
     context: { posts, tags },
   })
 
   createPage({
-    path: `/thumbnails`,
+    path: `/blog/thumbnails`,
     component: require.resolve('./src/templates/blog-list-thumbnails.tsx'),
     context: { posts },
   })
@@ -78,7 +78,7 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
     const pagesByTag = posts.filter((page) => page.tags?.includes(tag))
 
     createPage({
-      path: `/tag/${tag}`,
+      path: `/blog/tag/${tag}`,
       component: require.resolve('./src/templates/tag.tsx'),
       context: { posts: pagesByTag, filterTag: tag, popularPosts, tags },
     })
@@ -96,7 +96,7 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
   for (const { slug } of posts) {
     const page = await fetchPage(slug, apiKey)
     createPage({
-      path: `/posts/${page.slug}/`,
+      path: `/blog/posts/${page.slug}/`,
       component: require.resolve('./src/templates/page.tsx'),
       context: { page },
     })

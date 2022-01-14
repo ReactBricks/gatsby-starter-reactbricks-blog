@@ -51,7 +51,7 @@ const tagPage: React.FC<PageProps> = ({
                 ?.filter((tag) => tag !== 'popular')
                 .map((tag) => (
                   <Link
-                    to={tag === filterTag ? '/' : `/tag/${tag}`}
+                    to={tag === filterTag ? '/blog/list' : `/blog/tag/${tag}`}
                     key={tag}
                     className={classNames(
                       'inline-block text-sm font-bold mr-2 mb-2 transform duration-200  rounded-md px-2 py-1',
@@ -74,7 +74,7 @@ const tagPage: React.FC<PageProps> = ({
               {popularPosts?.map((post) => (
                 <li key={post.id}>
                   <Link
-                    to={`/${post.slug}`}
+                    to={`/blog/posts${post.slug}`}
                     className="text-gray-900 hover:text-cyan-600 font-bold text-lg leading-10 transition-colors"
                   >
                     {post.name}

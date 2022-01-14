@@ -53,7 +53,7 @@ const Page: React.FC<ReactBricksPageProps> = ({
                 ?.filter((tag) => tag !== 'popular')
                 .map((tag) => (
                   <Link
-                    to={`/tag/${tag}`}
+                    to={`/blog/tag/${tag}`}
                     key={tag}
                     className="inline-block text-sm font-bold mr-2 mb-2 transform duration-200 text-cyan-800 bg-cyan-100 hover:bg-cyan-200 hover:text-cyan-900 rounded-md px-2 py-1"
                   >
@@ -73,12 +73,12 @@ const Page: React.FC<ReactBricksPageProps> = ({
                 ?.filter((post) => post.tags.find((tag) => tag === 'popular'))
                 .map((post) => (
                   <li key={post.id}>
-                    <a
-                      href={post.slug}
+                    <Link
+                      to={`/blog/posts/${post.slug}`}
                       className="text-gray-900 hover:text-cyan-600 font-bold text-lg leading-10 transition-colors"
                     >
                       {post.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
             </ul>
