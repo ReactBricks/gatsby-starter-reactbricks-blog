@@ -54,11 +54,10 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
   )
 
   if (homePage) {
-    console.log(homePage)
     createPage({
       path: `/`,
       component: require.resolve('./src/templates/page.tsx'),
-      context: { page: homePage, },
+      context: { page: homePage },
     })
   }
 
