@@ -2,13 +2,13 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 
-interface BlogListItemProps {
+interface PostListItemProps {
   title: string
   href: string
   content: string
 }
 
-const BlogListItem: React.FC<BlogListItemProps> = ({
+const PostListItem: React.FC<PostListItemProps> = ({
   title,
   href,
   content,
@@ -30,4 +30,4 @@ const BlogListItem: React.FC<BlogListItemProps> = ({
   )
 }
 
-export default BlogListItem
+export default PostListItem

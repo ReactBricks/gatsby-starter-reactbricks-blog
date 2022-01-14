@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { Link } from 'gatsby'
 import React from 'react'
 import { types } from 'react-bricks/frontend'
-import BlogListItem from '../components/BlogListItem'
+import PostListItem from '../components/PostListItem'
 import ErrorNoHomePage from '../components/errorNoHomePage'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -32,7 +32,7 @@ const tagPage: React.FC<PageProps> = ({
             {filterTag}
           </h2>
           {posts?.map((post) => (
-            <BlogListItem
+            <PostListItem
               key={post.id}
               title={post.name}
               href={post.slug}
@@ -89,24 +89,5 @@ const tagPage: React.FC<PageProps> = ({
     </Layout>
   )
 }
-
-// export const getStaticProps: GetStaticProps = async (context) => {
-//   if (!config.apiKey) {
-//     return { props: { error: 'NOKEYS' } }
-//   }
-//   const { tag } = context.params
-//   try {
-//     const { items } = await fetchTags(process.env.API_KEY)
-//     items.sort()
-//     const pages = await fetchPages(config.apiKey, { tag: tag.toString() })
-//     const popularPosts = await fetchPages(config.apiKey, {
-//       type: 'blog',
-//       tag: 'popular',
-//     })
-//     return { props: { pages, filterTag: tag, popularPosts, tags: items } }
-//   } catch {
-//     return { props: {} }
-//   }
-// }
 
 export default tagPage

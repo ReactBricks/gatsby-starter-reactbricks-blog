@@ -16,7 +16,7 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
     )
     createPage({
       path: `/`,
-      component: require.resolve('./src/templates/index.tsx'),
+      component: require.resolve('./src/templates/page.tsx'),
       context: { page: null, error: 'NOKEYS' },
     })
     return
@@ -29,6 +29,8 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
     pageSize: 1000,
     sort: '-publishedAt',
   })
+
+  const homePage = await fetchPage('home', apiKey)
 
   if (!allPages || allPages.length === 0) {
     console.error(
@@ -43,6 +45,7 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
   }
 
   const posts = allPages.filter((page) => page.type === 'blog')
+
   const popularPosts = allPages.filter(
     (page) => page.type === 'blog' && page.tags?.includes('popular')
   )
@@ -50,9 +53,18 @@ exports.createPages = async ({ actions: { createPage }, ...rest }) => {
     (page) => page.type !== 'blog' && page.slug !== 'home'
   )
 
+  if (homePage) {
+    console.log(homePage)
+    createPage({
+      path: `/`,
+      component: require.resolve('./src/templates/page.tsx'),
+      context: { page: homePage, },
+    })
+  }
+
   createPage({
-    path: `/`,
-    component: require.resolve('./src/templates/index.tsx'),
+    path: `/list`,
+    component: require.resolve('./src/templates/list.tsx'),
     context: { posts, tags },
   })
 

@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { types } from 'react-bricks/frontend'
-import BlogListItem from '../components/BlogListItem'
+import PostListItem from '../components/PostListItem'
 import ErrorNoKeys from '../components/errorNoKeys'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -34,7 +34,7 @@ const Page: React.FC<ReactBricksPageProps> = ({
             Recently published
           </h2>
           {posts?.map((post) => (
-            <BlogListItem
+            <PostListItem
               key={post.id}
               title={post.name}
               href={post.slug}

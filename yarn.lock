@@ -7925,15 +7925,6 @@ postcss@^8.3.11:
     picocolors "^1.0.0"
     source-map-js "^0.6.2"
 
-postcss@^8.4.5:
-  version "8.4.5"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.5.tgz#bae665764dfd4c6fcc24dc0fdf7e7aa00cc77f95"
-  integrity sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==
-  dependencies:
-    nanoid "^3.1.30"
-    picocolors "^1.0.0"
-    source-map-js "^1.0.1"
-
 prebuild-install@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-7.0.0.tgz#3c5ce3902f1cb9d6de5ae94ca53575e4af0c1574"
@@ -7980,6 +7971,11 @@ pretty-error@^2.1.2:
   dependencies:
     lodash "^4.17.20"
     renderkid "^2.0.4"
+
+prism-theme-night-owl@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/prism-theme-night-owl/-/prism-theme-night-owl-1.4.0.tgz#af8a215ba75c081e22e74be41661dc40d7ad0c34"
+  integrity sha512-1N1GVbVorGd5t1Vw76yL/3rhqdiCpDrJg26Is+jGeMV7qiIMZL+bC7Mjx7HMMuVKZoi+2nWSbU5IutBYNy9tiQ==
 
 prismjs@^1.26.0:
   version "1.26.0"
@@ -8187,10 +8183,10 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bricks-ui@^0.3.19:
-  version "0.3.19"
-  resolved "https://registry.yarnpkg.com/react-bricks-ui/-/react-bricks-ui-0.3.19.tgz#4ae11eb52b9fe5de5f2b89095382e385315f10d8"
-  integrity sha512-nb6BzPfWAUpwUdO/c8rI7ktIbbnRLO69XCIykhSkd/NiKAZrinmXXeo7IhhGZgB55laoKLQzPTeyf0JI1DzeqA==
+react-bricks-ui@^0.3.20:
+  version "0.3.20"
+  resolved "https://registry.yarnpkg.com/react-bricks-ui/-/react-bricks-ui-0.3.20.tgz#55e5bf329414d27c98ddd5ba40eab4d73a485b61"
+  integrity sha512-W90Vsm0XY+QZti7oDmcKN/gteDLWUQT6EKK7wPZx8MxkXOs47LwPgIP4duUrS6a6Dp7K3BgMHsVkZa+MzGH7Vw==
   dependencies:
     classnames "^2.3.1"
     dayjs "^1.10.7"
@@ -9138,11 +9134,6 @@ source-map-js@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-0.6.2.tgz#0bb5de631b41cfbda6cfba8bd05a80efdfd2385e"
   integrity sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug==
-
-source-map-js@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.1.tgz#a1741c131e3c77d048252adfa24e23b908670caf"
-  integrity sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA==
 
 source-map-resolve@^0.5.0:
   version "0.5.3"
